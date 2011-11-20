@@ -1,0 +1,21 @@
+How to use the reader:
+
+<?php
+use DanielMelzer\Twitter\Reader;
+
+$twitter = new Reader();
+
+//Retrieve tweets by user id ...
+$twitter->retrieveUserById($userId)->retrieveTweets();
+
+//or by user name.
+$twitter->retrieveUserByScreenName($userName)->retrieveTweets();
+
+//Get the tweets, ...
+$tweets = $twitter->getTimeline();
+
+//the user ...
+$user = $twitter->getUser();
+
+//or the tweets without HTML elements like links
+$rawTweets = $twitter->getRawTimeline();
